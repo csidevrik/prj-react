@@ -5,7 +5,7 @@ function App() {
   return (
     <>
     <Container>
-      <h2></h2>
+      <h2>solo</h2>
     </Container>
     <Container>
         <header className="App-header">
