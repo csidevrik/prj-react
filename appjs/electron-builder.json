@@ -1,0 +1,29 @@
+{
+  "appId": "com.myapp.app",
+  "productName": "MyApp",
+  "directories": {
+    "output": "dist_electron"
+  },
+  "files": [
+    "dist/**/*",
+    "main.js"
+  ],
+  "mac": {
+    "category": "public.app-category.developer-tools"
+  },
+  "win": {
+    "target": "nsis"
+  },
+  "linux": {
+    "target": ["AppImage", "deb", "rpm"],
+    "category": "Development",
+    "desktop": {
+      "Name": "MyApp",
+      "Comment": "Mi aplicación multiplataforma",
+      "Categories": "Development"
+    },
+    "vendor": "MyCompany",
+    "synopsis": "Descripción corta de la aplicación",
+    "maintainer": "Tu Nombre <tu@email.com>"
+  }
+}
