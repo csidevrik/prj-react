@@ -2,33 +2,56 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import React from 'react'
+import './components/Navbar.css'
+import './components/Navbar.tsx'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+<>
+      <Navbar />
+      <div className="content">
+        {/* Aquí irá el resto del contenido de tu aplicación */}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
+  )
+}
+
+const Navbar = () => {
+  return (
+    <nav className="outlook-navbar">
+      <div className="navbar-left">
+        <div className="brand">
+          <h1>facetapa</h1>
+        </div>
+      </div>
+      
+      <div className="navbar-center">
+        <div className="search-container">
+          <input 
+            type="text" 
+            placeholder="Buscar" 
+            className="search-input"
+          />
+          <button className="search-button">
+            <i className="search-icon">🔍</i>
+          </button>
+        </div>
+      </div>
+
+      <div className="navbar-right">
+        <button className="icon-button">💡</button>
+        <button className="icon-button">📝</button>
+        <button className="icon-button">🔔</button>
+        <button className="icon-button">⚙️</button>
+        <button className="icon-button">➖</button>
+        <button className="icon-button">⬜</button>
+        <button className="icon-button">✖️</button>
+      </div>
+    </nav>
   )
 }
 
