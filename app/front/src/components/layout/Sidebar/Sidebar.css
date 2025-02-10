@@ -1,0 +1,27 @@
+.sidebar {
+  width: 240px;
+  min-width: 240px;
+  background-color: #f3f3f3;
+  height: calc(100vh - 48px); /* Altura total menos la altura del navbar */
+  overflow-y: auto;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+  }
+
+  .sidebar-menu {
+    display: flex;
+    overflow-x: auto;
+    padding: 0.5rem;
+  }
+
+  .menu-item {
+    flex-shrink: 0;
+    padding: 8px 16px;
+  }
+}

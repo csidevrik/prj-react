@@ -1,58 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import React from 'react'
-import './components/Navbar.css'
-import './components/Navbar.tsx'
-
+import React from 'react';
+import Navbar from './components/layout/Navbar';
+import Sidebar from './components/layout/Sidebar';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-<>
+    <div className="app">
       <Navbar />
-      <div className="content">
-        {/* Aquí irá el resto del contenido de tu aplicación */}
+      <div className="main-container">
+        <Sidebar />
+        <main className="content">
+          {/* Aquí irá el contenido principal */}
+        </main>
       </div>
-    </>
-  )
+    </div>
+  );
 }
 
-const Navbar = () => {
-  return (
-    <nav className="outlook-navbar">
-      <div className="navbar-left">
-        <div className="brand">
-          <h1>facetapa</h1>
-        </div>
-      </div>
-      
-      <div className="navbar-center">
-        <div className="search-container">
-          <input 
-            type="text" 
-            placeholder="Buscar" 
-            className="search-input"
-          />
-          <button className="search-button">
-            <i className="search-icon">🔍</i>
-          </button>
-        </div>
-      </div>
-
-      <div className="navbar-right">
-        <button className="icon-button">💡</button>
-        <button className="icon-button">📝</button>
-        <button className="icon-button">🔔</button>
-        <button className="icon-button">⚙️</button>
-        <button className="icon-button">➖</button>
-        <button className="icon-button">⬜</button>
-        <button className="icon-button">✖️</button>
-      </div>
-    </nav>
-  )
-}
-
-export default App
+export default App;

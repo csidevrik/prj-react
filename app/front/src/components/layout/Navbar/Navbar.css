@@ -1,0 +1,58 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #8fbcaa;
+  color: white;
+  height: 48px;
+  width: 100%;
+  position: fixed; /* Mantiene el navbar fijo en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* ... resto de los estilos del navbar ... */
+
+/* Hacer el área de búsqueda responsive */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 4px;
+  padding: 4px;
+  width: 40%; /* Usar porcentaje en lugar de píxeles fijos */
+  max-width: 600px;
+  min-width: 200px;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  .navbar-search {
+    width: 50%;
+  }
+  
+  .navbar-actions {
+    gap: 4px;
+  }
+  
+  .action-button {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand h1 {
+    font-size: 1rem;
+  }
+  
+  .navbar-search {
+    width: 40%;
+  }
+  
+  .window-controls {
+    margin-left: 8px;
+  }
+}
