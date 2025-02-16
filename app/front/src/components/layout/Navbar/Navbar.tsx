@@ -2,12 +2,12 @@ import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
-        <h1>facetapa</h1>
-      </div>
+      <Link to="/" className="navbar-logo">
+        facetapa
+      </Link>
       
       <div className="navbar-search">
         <input 
