@@ -21,8 +21,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-actions">
-        <button className="action-button">��</button>
-        <Link to="/facturas">Facturas</Link>
+        
         <button className="action-button">🔔</button>
         <div className="window-controls">
           <button className="window-button">─</button>
