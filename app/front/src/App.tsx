@@ -2,18 +2,22 @@ import React from 'react';
 import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Invoices from './components/pages/Invoices/Invoices';
 
 function App() {
   return (
-    <div className="app">
+    <Router>
       <Navbar />
       <div className="main-container">
         <Sidebar />
         <main className="content">
-          {/* Aquí irá el contenido principal */}
+          <Routes>
+            <Route path="/facturas" element={<Invoices />} />
+          </Routes>
         </main>
       </div>
-    </div>
+    </Router>
   );
 }
 
