@@ -17,14 +17,13 @@
   overflow-y: auto;
 }
 
-/* Ajustes responsive para el contenedor principal */
+/* Ajustes responsive */
 @media (max-width: 768px) {
   .main-container {
     flex-direction: column;
   }
 }
 
-/* Asegurarse de que no haya márgenes ni padding por defecto */
 * {
   margin: 0;
   padding: 0;

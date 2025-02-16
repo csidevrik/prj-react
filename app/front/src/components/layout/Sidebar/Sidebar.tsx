@@ -7,7 +7,7 @@ const Sidebar = () => {
       <ul className="sidebar-menu">
         <li className="menu-item">
           <i className="icon">👤</i>
-          <span>Accounts</span>
+          <span>Facturas</span>
         </li>
         <li className="menu-item">
           <i className="icon">⚙️</i>

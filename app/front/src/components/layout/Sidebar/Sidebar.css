@@ -2,8 +2,37 @@
   width: 240px;
   min-width: 240px;
   background-color: #f3f3f3;
-  height: calc(100vh - 48px); /* Altura total menos la altura del navbar */
+  height: calc(100vh - 48px);
   overflow-y: auto;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+  background-color: #e6e6e6;
+}
+
+.menu-item i {
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+.menu-item span {
+  font-size: 0.9rem;
+  color: #333;
 }
 
 /* Ajustes responsive */

@@ -1,58 +1,99 @@
 .navbar {
+  background-color: #3da179;
+  color: white;
+  padding: 0.5rem 1rem;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
-  background-color: #8fbcaa;
-  color: white;
-  height: 48px;
-  width: 100%;
-  position: fixed; /* Mantiene el navbar fijo en la parte superior */
+  width: 100vw; /* Usar viewport width */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 }
 
-/* ... resto de los estilos del navbar ... */
+/* Sección izquierda */
+.navbar-brand {
+  flex: 0 0 200px; /* Ancho fijo para el logo */
+}
 
-/* Hacer el área de búsqueda responsive */
+.navbar-brand h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: white;
+}
+
+/* Sección central */
 .navbar-search {
+  flex: 0 1 400px; /* Ancho flexible con máximo */
   display: flex;
   align-items: center;
   background: white;
   border-radius: 4px;
   padding: 4px;
-  width: 40%; /* Usar porcentaje en lugar de píxeles fijos */
-  max-width: 600px;
-  min-width: 200px;
+  margin: 0 20px;
 }
 
-/* Ajustes responsive */
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Sección derecha */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 1.2rem;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.window-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .navbar-search {
-    width: 50%;
+    flex: 0 1 300px;
+    margin: 0 10px;
   }
   
   .navbar-actions {
-    gap: 4px;
-  }
-  
-  .action-button {
-    padding: 4px;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar-brand h1 {
-    font-size: 1rem;
-  }
-  
-  .navbar-search {
-    width: 40%;
+    gap: 8px;
   }
   
   .window-controls {
     margin-left: 8px;
+    padding-left: 8px;
   }
 }
