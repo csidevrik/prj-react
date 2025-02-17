@@ -1,0 +1,1 @@
+// Mover el contenido actual de Sidebar.tsx aquí

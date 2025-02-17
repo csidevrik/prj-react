@@ -1,0 +1,1 @@
+// Mover el contenido actual de Navbar.tsx aquí
