@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './FileIcon.module.css';
-import { FaFile as DocumentIcon } from 'react-icons/fa';
+// import { FaFile as DocumentIcon } from 'react-icons/fa';
 
 interface FileIconProps {
   filename: string;

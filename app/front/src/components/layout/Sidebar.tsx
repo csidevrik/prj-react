@@ -38,9 +38,9 @@ const Sidebar = () => {
       </nav>
 
       <div className={styles.promoCard}>
-        <h3>Try Plus or Pro with a 7-day free trial</h3>
-        <p>Go deeper and learn job-ready skills. Practice with real-world projects, take assessments, and earn certificates.</p>
-        <button className={styles.tryButton}>Try for free</button>
+        <h3>Noticia de hacking</h3>
+        <p>Hasta cuando la idiocracy estara primando en el planeta?</p>
+        <button className={styles.tryButton}>Known more</button>
       </div>
     </aside>
   );
