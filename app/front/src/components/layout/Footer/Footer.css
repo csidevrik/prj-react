@@ -1,0 +1,11 @@
+.footer {
+  height: 48px;
+  min-height: 48px;
+  width: 100%;
+  padding: 0 var(--spacing-medium);
+  background-color: var(--brand-secondary, #485f53);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 

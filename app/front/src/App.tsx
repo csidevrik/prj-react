@@ -1,24 +1,21 @@
-import React from 'react';
-import Navbar from './components/layout/Navbar';
-import Sidebar from './components/layout/Sidebar';
+import { BrowserRouter } from 'react-router-dom';
+import BaseLayout from './components/layout/BaseLayout/BaseLayout';
+import { routes } from './routes';
+import { useRoutes } from 'react-router-dom';
 import './styles/App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Invoices from './components/pages/Invoices/Invoices';
+
+function AppRoutes() {
+  const element = useRoutes(routes);
+  return element;
+}
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <div className="main-container">
-        <Sidebar />
-        <main className="content">
-          <Routes>
-            <Route path="/" element={<div>Página Principal</div>} />
-            <Route path="/facturas" element={<Invoices />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+    <BrowserRouter>
+      <BaseLayout>
+        <AppRoutes />
+      </BaseLayout>
+    </BrowserRouter>
   );
 }
 

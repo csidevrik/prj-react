@@ -1,17 +1,20 @@
 .navbar {
-  background-color: #0092ab;
-  color: white;
-  padding: 0.5rem 1rem;
-  height: 48px;
+  height: 64px;
+  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw; /* Usar viewport width */
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  padding: 0 var(--spacing-medium);
+  background-color: var(--brand-primary, #03a9c6);
+  color: white;
+  width: 100%;
+}
+
+.navbar-logo {
+  color: white;
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  font-weight: bold;
 }
 
 /* Sección izquierda */
@@ -27,13 +30,14 @@
 
 /* Sección central */
 .navbar-search {
-  flex: 0 1 400px; /* Ancho flexible con máximo */
+  flex: 1; /* Cambiado para que use más espacio */
+  max-width: 800px; /* Aumentado el máximo */
+  margin: 0 32px; /* Más espacio a los lados */
   display: flex;
   align-items: center;
   background: white;
   border-radius: 4px;
   padding: 4px;
-  margin: 0 20px;
 }
 
 .search-input {
