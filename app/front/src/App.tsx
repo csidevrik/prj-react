@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';
-import './App.css';
+import './styles/App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Invoices from './components/pages/Invoices/Invoices';
 
@@ -13,6 +13,7 @@ function App() {
         <Sidebar />
         <main className="content">
           <Routes>
+            <Route path="/" element={<div>Página Principal</div>} />
             <Route path="/facturas" element={<Invoices />} />
           </Routes>
         </main>
