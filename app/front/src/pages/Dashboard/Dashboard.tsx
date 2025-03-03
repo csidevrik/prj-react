@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Dashboard.module.css';
-import CourseCard from '../components/CourseCard';
+import CourseCard from '../../components/CourseCard/CourseCard';
 
 const Dashboard = () => {
   return (

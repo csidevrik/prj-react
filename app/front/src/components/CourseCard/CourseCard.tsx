@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CourseCard.module.css';
+import styles from '../../components/CourseCard/CourseCard.module.css';
 
 interface CourseCardProps {
   type: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/FileIcon.module.css';
+import styles from './FileIcon.module.css';
 import { FaFile as DocumentIcon } from 'react-icons/fa';
 
 const FileIcon = ({ filename }) => {

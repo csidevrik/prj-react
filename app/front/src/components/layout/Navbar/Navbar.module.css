@@ -1,0 +1,52 @@
+.navbar {
+  background-color: #0092ab;
+  color: white;
+  padding: 0.5rem 1rem;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbarLogo {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbarSearch {
+  flex: 0 1 400px;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 4px 8px;
+}
+
+.searchButton, .actionButton, .windowButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.navbarActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.windowControls {
+  display: flex;
+  gap: 8px;
+}
+
+/* Resto de los estilos con los nombres de clase actualizados */ 

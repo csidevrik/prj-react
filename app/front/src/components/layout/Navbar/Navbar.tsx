@@ -1,12 +1,20 @@
 import React from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    console.log('Logo clicked');
+    navigate('/');
+  };
+
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-logo">
-        facetapa
+      <Link to="/" className="navbar-logo" onClick={handleLogoClick}>
+        <h1>facetapa</h1>
       </Link>
       
       <div className="navbar-search">

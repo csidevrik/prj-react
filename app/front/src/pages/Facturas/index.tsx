@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import styles from './Facturas.module.css';
-import FileIcon from '../../components/FileIcon';
+import FileIcon from '../../components/FileIcon/FileIcon';
 import { getFileIcon, getFileColor } from '../../utils/fileHelpers';
 
 interface FileWithPreview extends File {
