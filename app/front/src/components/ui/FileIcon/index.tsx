@@ -1,1 +1,0 @@
-// Mover el contenido actual de FileIcon.tsx aquí
