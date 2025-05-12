@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+# Proyecto NodeAulio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una especie de wiki de matemáticas donde se exponen algunos aspectos que he aprendido a lo largo del tiempo, ya sea durante mi etapa como estudiante de colegio o universidad. No pretende abarcar todas las matemáticas, sino enfocarse en las experiencias que he tenido con ciertos criterios matemáticos y cómo los he utilizado a lo largo de mi carrera.
 
-Currently, two official plugins are available:
+## Requisitos previos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-## Expanding the ESLint configuration
+1. [Node.js](https://nodejs.org/) (versión LTS recomendada).
+2. [Git](https://git-scm.com/) para clonar el repositorio.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Si no tienes estas herramientas instaladas, descárgalas e instálalas desde los enlaces proporcionados.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Pasos para ejecutar el proyecto
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clonar el repositorio**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+   Abre una terminal y ejecuta el siguiente comando para clonar el repositorio:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.git
+   ```
+
+   Luego, navega al directorio del proyecto:
+
+   ```bash
+   cd tu-repositorio
+   ```
+
+2. **Instalar dependencias**
+
+   Ejecuta el siguiente comando para instalar las dependencias del proyecto:
+
+   ```bash
+   npm install
+   ```
+
+3. **Configurar variables de entorno**
+
+   Si el proyecto requiere variables de entorno, crea un archivo `.env` en la raíz del proyecto y configura las variables necesarias. Puedes usar el archivo `.env.example` como referencia:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Luego, edita el archivo `.env` con los valores correspondientes.
+
+4. **Ejecutar el proyecto**
+
+   Para iniciar el proyecto, utiliza el siguiente comando:
+
+   ```bash
+   npm start
+   ```
+
+   Esto iniciará el servidor y podrás acceder a la aplicación en tu navegador en `http://localhost:3000` (o el puerto configurado).
+
+## Scripts adicionales
+
+- **Ejecutar en modo desarrollo**:
+
+  ```bash
+  npm run dev
+  ```
+
+- **Ejecutar pruebas**:
+
+  ```bash
+  npm test
+  ```
+
+## Notas adicionales
+
+- Este proyecto está diseñado para compartir conocimientos y experiencias matemáticas de manera accesible.
+- Si encuentras problemas durante la instalación o ejecución, verifica que tienes la versión correcta de Node.js instalada.
+- Si el proyecto utiliza una base de datos, asegúrate de configurarla correctamente según las instrucciones del archivo `.env`.
+
+## Contribuciones
+
+Si deseas contribuir a este proyecto, por favor abre un issue o envía un pull request.
+
+---
