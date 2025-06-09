@@ -1,54 +1,123 @@
-# React + TypeScript + Vite
+# Convertir un Proyecto React en una Aplicación de Escritorio (Linux y Windows)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto está basado en React y puede convertirse en una aplicación de escritorio multiplataforma usando [Electron](https://www.electronjs.org/) y [electron-builder](https://www.electron.build/).
 
-Currently, two official plugins are available:
+## Estructura del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+my-react-app/
+├── public/
+├── src/
+├── package.json
+├── electron/
+│   └── main.js
+└── ...
+```
 
-## Expanding the ESLint configuration
+## Pasos para Convertir el Proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1. Instalar Electron y electron-builder
+
+Desde la raíz del proyecto, ejecuta:
+
+```bash
+npm install --save-dev electron electron-builder
+```
+
+### 2. Crear el archivo principal de Electron
+
+Crea una carpeta llamada `electron` y dentro de ella un archivo `main.js` con el siguiente contenido:
 
 ```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
+// filepath: electron/main.js
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+
+function createWindow () {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
     },
-  },
-})
+  });
+
+  win.loadFile(path.join(__dirname, '../build/index.html'));
+}
+
+app.whenReady().then(createWindow);
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> Si usas TypeScript, puedes adaptar este archivo a `.ts`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 3. Modificar los scripts en `package.json`
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Agrega o modifica los siguientes scripts:
+
+```json
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "electron": "npm run build && electron electron/main.js",
+  "dist": "npm run build && electron-builder"
+}
 ```
+
+### 4. Configurar electron-builder
+
+Agrega la configuración mínima en tu `package.json`:
+
+```json
+"build": {
+  "appId": "com.tuempresa.tuapp",
+  "productName": "MiAppReact",
+  "files": [
+    "build/**/*",
+    "electron/**/*"
+  ],
+  "directories": {
+    "buildResources": "assets"
+  },
+  "linux": {
+    "target": ["AppImage", "deb"]
+  },
+  "win": {
+    "target": ["nsis"]
+  }
+}
+```
+
+### 5. Construir y ejecutar la app
+
+- Para probar en modo escritorio:
+
+  ```bash
+  npm run electron
+  ```
+
+- Para generar instaladores para Linux y Windows:
+
+  ```bash
+  npm run dist
+  ```
+
+  Los instaladores se generarán en la carpeta `dist/`.
+
+---
+
+## Requisitos
+
+- Node.js y npm instalados
+- Para Linux: dependencias de Electron (puedes necesitar instalar `libgtk-3-0`, `libnss3`, etc.)
+- Para Windows: puedes compilar desde Linux usando Wine, pero se recomienda compilar en cada sistema operativo.
+
+---
+
+## Recursos
+
+- [Electron Documentation](https://www.electronjs.org/docs)
+- [electron-builder Documentation](https://www.electron.build/)
