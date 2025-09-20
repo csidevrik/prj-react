@@ -10,13 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@capacitor/android": "^7.2.0",
     "@capacitor/cli": "^7.2.0",
     "@capacitor/core": "^7.2.0",
-=======
-    "mathw": "file:",
->>>>>>> feffc8a6ed9976b7f558c1a1340ce29681777941
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.2.0",
